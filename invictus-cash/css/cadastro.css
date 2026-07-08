@@ -1,0 +1,253 @@
+/* Configuração da página inteira */
+.login-page {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F8FAFC;
+    font-family: 'Inter', sans-serif;
+}
+
+.login-container {
+    display: flex;
+    width: 100%;
+    max-width: 1080px;
+    height: 95vh;
+    max-height: 850px;
+    background: #ffffff;
+    border-radius: 32px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+    overflow: hidden;
+    margin: 20px;
+}
+
+/* ── SIDERBAR GRADIENTE (ESQUERDA) ── */
+.login-sidebar {
+    flex: 1.1; /* Um pouco mais larga que o formulário */
+    background: linear-gradient(120deg, #D0C2EE, #9070D6, #56DEC6);
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar-logo img {
+    height: 60px;
+    object-fit: contain;
+}
+
+.sidebar-title {
+    font-family: 'Sora', sans-serif;
+    color: #FFFFFF;
+    font-size: 2.6rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-top: 32px;
+    margin-bottom: 12px;
+}
+
+.cyan-text {
+    color: #56DEC6;
+}
+
+.sidebar-subtitle {
+    color: #FFFFFF;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.95;
+    max-width: 420px;
+    margin-bottom: 32px;
+}
+
+/* Cards Flutuantes */
+.floating-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: #FFFFFF;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 2;
+}
+
+.card-text-box h4 {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.card-text-box p {
+    margin: 2px 0 0 0;
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.card-meta {
+    width: 260px;
+    background: rgba(115, 103, 240, 0.2); /* Tom arroxeado translúcido */
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.pts-tag {
+    color: #56DEC6;
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-top: 4px;
+}
+
+.card-streak {
+    width: 220px;
+    align-self: flex-end;
+    margin-right: 20px;
+    margin-top: 15px;
+    background: linear-gradient(135deg, rgba(86, 222, 198, 0.4), rgba(144, 112, 214, 0.2));
+}
+
+/* Posicionamento do Elefante */
+.mascot-img {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 78%;
+    max-width: 340px;
+    z-index: 1;
+}
+
+/* ── FORMULÁRIO (DIREITA) ── */
+.login-content {
+    flex: 0.9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+    background: #FFFFFF;
+}
+
+.form-box {
+    width: 100%;
+    max-width: 380px;
+}
+
+.form-box h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.9rem;
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+.form-subtitle {
+    color: #555555;
+    font-size: 0.95rem;
+    margin-bottom: 36px;
+}
+
+/* Inputs em formato de pílula com sombra interna sutil */
+.input-group {
+    margin-bottom: 22px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    background: #F0F0F2; /* Tom de cinza claro idêntico ao da imagem */
+    border: 1px solid #E2E2E6;
+    border-radius: 50px; /* Bordas arredondadas estilo pílula */
+    padding: 0 20px;
+    height: 48px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.field-icon {
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper input {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 0.9rem;
+    color: #333333;
+}
+
+.input-wrapper input::placeholder {
+    color: #77777A;
+    font-weight: 400;
+}
+
+.forgot-link-box {
+    text-align: right;
+    margin-top: -10px;
+    margin-bottom: 28px;
+}
+
+.forgot-link {
+    color: #4AD9B8; /* Ciano do mockup */
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* Botão Retangular Lilás/Roxo */
+.btn-submit {
+    width: 100%;
+    height: 48px;
+    background-color: #6D3AE9; /* Tom exato do botão ENTRAR */
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px; /* Cantos quase retos igual ao design */
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #5829CE;
+}
+
+.redirect-text {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 0.85rem;
+    color: #444444;
+}
+
+.redirect-text a {
+    color: #4AD9B8;
+    text-decoration: underline;
+    font-weight: 500;
+   
+}
+
+/* Responsivo para telas pequenas */
+@media (max-width: 850px) {
+    .login-sidebar { display: none; }
+    .login-container { max-width: 450px; height: auto; min-height: 500px; }
+}
+
+
