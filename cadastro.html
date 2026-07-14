@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cadastro - Invictus Cash</title>
+    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body class="cadastro-page">
+
+    <div class="cadastro-container">
+        
+        <div class="cadastro-sidebar">
+            <div class="sidebar-logo">
+                <img src="img/image 8.png" alt="Invictus Cash logo featuring the brand name and visual identity">
+            </div>
+            
+            <h1 class="sidebar-title">Sua jornada financeira <span class="cyan-text">começa aqui</span></h1>
+            <p class="sidebar-subtitle">Aprenda, pratique e conquiste os seus objetivos de um jeito simples e divertido.</p>
+            
+            <div class="floating-card card-meta">
+                <div class="card-icon-yellow">
+                    🤖</div>
+                <div class="card-text-box">
+                    <h4>Bata Metas, Acumule Pontos e conquiste a liberdade que voce sempre quis!</h4>
+                    
+                </div>
+            </div>
+
+            <div class="floating-card card-streak">
+                <div class="card-icon-fire">🎯</div>
+                <div class="card-text-box">
+                    <h4>inicie o seu desafio!</h4>
+                </div>
+            </div>
+
+            <img src="img/image 10.png" alt="Mascote Elefante" class="mascot-img">
+        </div>
+
+       <div class="cadastro-content">
+            <div class="form-box">
+                <h2>Vamos começar?🚀</h2>
+                <p class="form-subtitle">Ei! Vamos bater essa meta juntos? cadastre-se e comece a sua jornada!</p>
+
+                <form id="register-form" data-redirect="login.html">
+
+                    <div class="input-group">
+                        <label>Nome Completo</label>
+                        <div class="input-wrapper">
+                            <span class="field-icon">👤</span> 
+                            <input type="text" placeholder="SEU NOME COMPLETO" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>E-mail</label>
+                        <div class="input-wrapper">
+                            <span class="field-icon">📩</span> 
+                            <input type="email" placeholder="SEU@EMAIL.COM" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Senha</label>
+                        <div class="input-wrapper">
+                            <span class="field-icon">🔑</span> 
+                            <input type="password" id="register-password" placeholder="DIGITE SUA SENHA" required>
+                            <button type="button" id="toggle-register-password" class="btn-toggle-password">👁️</button>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+    <label>Confirme a Senha</label>
+    <div class="input-wrapper">
+        <span class="field-icon">🔑</span> 
+        <input type="password" id="confirm-password" placeholder="CONFIRME SUA SENHA" required>
+        <button type="button" id="toggle-confirm-password" class="btn-toggle-password">👁️</button>
+    </div>
+    <span id="password-error" class="error-message"></span>
+</div>
+
+                    <div class="forgot-link-box">
+                        <a href="#" class="forgot-link">Esqueceu a senha?</a>
+                    </div>
+
+                    <button type="submit" class="btn-submit">CADASTRAR</button>
+                </form>
+
+                <p class="redirect-text">Já tem uma conta? <a href="login.html">Faça login</a></p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+    </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+
+    <script src="js/cadastro.js"></script>
+</body>
+</html>

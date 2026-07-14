@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio Digital - Múltiplos Fusos Horários</title>
+    <link rel="stylesheet" href="css/clock-styles.css">
+</head>
+<body>
+    <div class="clock-container">
+        <div class="header">
+            <h1>🕐 Relógio Digital Global</h1>
+            <p>Acompanhe o horário em diferentes fusos horários</p>
+        </div>
+
+        <div class="controls">
+            <button class="btn-add-timezone" onclick="addTimezoneModal()">+ Adicionar Fuso Horário</button>
+            <button class="btn-reset" onclick="resetToDefault()">↻ Restaurar Padrão</button>
+        </div>
+
+        <div class="clocks-grid" id="clocksContainer">
+            <!-- Relógios serão adicionados aqui via JavaScript -->
+        </div>
+    </div>
+
+    <!-- Modal para adicionar fuso horário -->
+    <div id="timezoneModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeTimezoneModal()">&times;</span>
+            <h2>Adicionar Fuso Horário</h2>
+            <select id="timezoneSelect" class="timezone-select">
+                <option value="">Selecione um fuso horário</option>
+                <option value="UTC">UTC (Horário Universal)</option>
+                <option value="America/New_York">Nova York (EST/EDT)</option>
+                <option value="America/Los_Angeles">Los Angeles (PST/PDT)</option>
+                <option value="America/Chicago">Chicago (CST/CDT)</option>
+                <option value="America/Denver">Denver (MST/MDT)</option>
+                <option value="America/Anchorage">Anchorage (AKST/AKDT)</option>
+                <option value="Pacific/Honolulu">Honolulu (HST)</option>
+                <option value="Europe/London">Londres (GMT/BST)</option>
+                <option value="Europe/Paris">Paris (CET/CEST)</option>
+                <option value="Europe/Berlin">Berlim (CET/CEST)</option>
+                <option value="Europe/Moscow">Moscou (MSK)</option>
+                <option value="Asia/Dubai">Dubai (GST)</option>
+                <option value="Asia/Kolkata">Índia (IST)</option>
+                <option value="Asia/Bangkok">Bangkok (ICT)</option>
+                <option value="Asia/Hong_Kong">Hong Kong (HKT)</option>
+                <option value="Asia/Shanghai">Xangai (CST)</option>
+                <option value="Asia/Tokyo">Tóquio (JST)</option>
+                <option value="Asia/Seoul">Seul (KST)</option>
+                <option value="Australia/Sydney">Sydney (AEDT/AEST)</option>
+                <option value="Australia/Melbourne">Melbourne (AEDT/AEST)</option>
+                <option value="Pacific/Auckland">Auckland (NZDT/NZST)</option>
+                <option value="America/Sao_Paulo">São Paulo (BRT/BRST)</option>
+                <option value="America/Argentina/Buenos_Aires">Buenos Aires (ART)</option>
+                <option value="Africa/Cairo">Cairo (EET)</option>
+                <option value="Africa/Johannesburg">Johannesburgo (SAST)</option>
+                <option value="Asia/Singapore">Singapura (SGT)</option>
+            </select>
+            <button class="btn-add" onclick="addTimezone()">Adicionar</button>
+        </div>
+    </div>
+
+    <script src="js/clock-script.js"></script>
+</body>
+</html>

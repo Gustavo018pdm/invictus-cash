@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Invictus Cash</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body class="login-page">
+
+    <div class="login-container">
+        
+        <div class="login-sidebar">
+            <div class="sidebar-logo">
+                <img src="img/image 8.png" alt="Invictus Cash logo featuring the brand name and visual identity">
+            </div>
+            
+            <h1 class="sidebar-title">Sua jornada financeira <span class="cyan-text">começa aqui</span></h1>
+            <p class="sidebar-subtitle">Aprenda, pratique e conquiste os seus objetivos de um jeito simples e divertido.</p>
+            
+            <div class="floating-card card-meta">
+                <div class="card-icon-yellow">
+                    💰 </div>
+                <div class="card-text-box">
+                    <h4>Meta Concluída</h4>
+                    <p>Guardar R$500,00</p>
+                    <span class="pts-tag">+70pts</span>
+                </div>
+            </div>
+
+            <div class="floating-card card-streak">
+                <div class="card-icon-fire">🔥</div>
+                <div class="card-text-box">
+                    <h4>Sequência 12 dias</h4>
+                    <p>Incríveis!</p>
+                </div>
+            </div>
+
+            <img src="img/image 9.png" alt="Mascote Elefante" class="mascot-img">
+        </div>
+
+        <div class="login-content">
+            <div class="form-box">
+                <h2>Bem-Vindo de volta! 👋</h2>
+                <p class="form-subtitle">Faça login para continuar a sua jornada.</p>
+
+                <form data-redirect="index.html">
+                    <div class="input-group">
+                        <label>E-mail</label>
+                        <div class="input-wrapper">
+                            <span class="field-icon">📩</span> <input type="email" placeholder="SEU@EMAIL.COM" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Senha</label>
+                        <div class="input-wrapper">
+                            <span class="field-icon">🔑</span>
+                            <input type="password" id="password" placeholder="DIGITE SUA SENHA" required>
+                            <button type="button" id="toggle-password" class="btn-toggle-password">👁️</button>
+                        </div>
+                    </div>
+
+                    <div class="forgot-link-box">
+                        <a href="#" class="forgot-link">Esqueceu a senha?</a>
+                    </div>
+
+                    <button type="submit" class="btn-submit">ENTRAR</button>
+                </form>
+
+                <p class="redirect-text">Não tem uma conta? <a href="cadastro.html">Inscreva-se</a></p>
+            </div>
+        </div>
+
+    </div>
+
+    
+    <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+    </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

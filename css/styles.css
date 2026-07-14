@@ -1,0 +1,1381 @@
+/* ===== VARIÁVEIS E CORES ===== */
+
+
+
+:root {
+    --primary-color: #6366f1;
+    --primary-dark: #4f46e5;
+    --secondary-color: #06b6d4;
+    --accent-color: #8b5cf6;
+    --success-color: #10b981;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --bg-light: #f9fafb;
+    --bg-white: #ffffff;
+    --border-color: #e5e7eb;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+        --bg-container: #ffffff;
+    --text-main: #0b0f19;       /* Tom escuro premium */
+    --text-muted: #475569;      /* Slate moderno */
+    --accent-start: #73F4D7;    /* Ciano base */
+    --accent-end: #3ee6c0;      /* Ciano profundo para o gradiente */
+    --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    --radius-lg: 24px;          /* Curvas mais amigáveis no container */
+    --radius-md: 12px;          /* Bordas do botão */
+    --radius-sm: 8px;           /* Bordas do ícone */
+
+     --purple-main: #7B2FBE;    /* Roxo vivo dos badges e sliders */
+  --purple-dark: #3A00A1;    /* Roxo ultra profundo do card de resultado */
+  --purple-soft: #A364FF;    /* Tom mais claro para degradês */
+  --dark-text: #0B0F19;      /* Preto suave para o título principal */
+  --gray-700: #4A4A68;       /* Texto das listas e labels */
+  --gray-200: #E6E6F2;       /* Linha do slider vazia e bordas secundárias */
+  --off-white: #F9F9FE;      /* Fundo da seção */
+  --white: #FFFFFF;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+
+  --roxo-suave: #D0C2EE; /* Roxo suave para o gradiente */
+
+  /* Variável do gradiente para o Tema Claro */
+    --primary-gradient: linear-gradient(120deg, #D0C2EE, #9070D6, #56DEC6);
+
+    --logo-image: url('../img/logo-light.png');
+
+}
+
+/* ===== TEMA ESCURO (DARK MODE) ===== */
+.dark-theme {
+    /* Fundos */
+    --bg-light: #0B0F19;         /* O off-white vira o fundo escuro premium */
+    --off-white: #0B0F19;
+    --bg-white: #131A2E;         /* Os fundos brancos viram um azul-escuro fosco */
+    --bg-container: #131A2E;
+    --white: #131A2E;
+
+    /* Textos */
+    --text-dark: #F1F5F9;         /* Textos escuros viram branco/cinza claro */
+    --text-main: #F1F5F9;
+    --dark-text: #F1F5F9;
+    
+    --text-light: #94A3B8;        /* Textos secundários viram cinza médio */
+    --text-muted: #94A3B8;
+    --gray-700: #94A3B8;
+
+    /* Bordas e Linhas */
+    --border-color: #1E293B;      /* Bordas ficam escuras e sutis */
+    --gray-200: #1E293B;
+    
+    /* Sombra mais suave para o tema escuro */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.4);
+
+    /* O Roxo ultra profundo do card de resultado pode ficar um pouco mais visível */
+    --purple-dark: #1E0A45; 
+
+    /* Variável do gradiente adaptada para o Tema Escuro (tons mais profundos) */
+    --primary-gradient: linear-gradient(120deg, #2E1A47, #4A2874, #1B5E51);
+
+     --roxo-suave: #1E0A45; /* Roxo suave para o gradiente */ 
+
+     --logo-image: url('../img/logo-dark.png');
+
+
+}
+
+.sidebar-logo {
+    width: 200px;
+    height: 200px;
+    background-image: var(--logo-image);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Estilização do Botão de Alternar Tema (btn-theme) que adicionamos no HTML */
+.btn-theme {
+    background: none;
+    border: 1px solid var(--border-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: var(--radius-sm);
+    transition: transform 0.2s, background-color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-theme:hover {
+    transform: scale(1.1);
+    background-color: var(--border-color);
+}
+
+
+
+
+/* ===== RESET E ESTILOS GLOBAIS ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+}
+
+html {
+    min-height: 100%;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-white);
+    body {
+    transition: background-color 0.6s ease, color 0.6s ease;
+}
+    
+}
+
+
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+   
+}
+
+/* ===== TIPOGRAFIA ===== */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+    font-family: Huninn
+}
+
+.texto-verde {
+    color: #44F8D8; /* Você pode mudar esse código para o tom de verde que preferir */
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* ===== BOTÕES ===== */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-primary-large {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 16px 48px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.btn-primary-large:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary-large {
+    background: linear-gradient(120deg, #D0C2EE, #9070D6, #56DEC6);
+    color: white;
+    padding: 16px 48px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+/* Configuração Geral para Ambos os Botões */
+.btn-primary, .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 290px; /* Reduzido levemente para acompanhar o tamanho da nova seta */
+    margin: 10px; /* Adiciona espaçamento ao redor de cada botão */
+    
+    padding: 12px 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.22); 
+}
+
+/* Efeito ao passar o mouse */
+.btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.28);
+}
+
+/* Customização do Botão Roxo */
+.btn-primary {
+    background: #6D3FE3;
+    color: #FFFFFF;
+}
+
+/* Customização do Botão Ciano */
+.btn-secondary {
+    background: #73F4D7;
+    color: #000000;
+}
+
+/* Tamanho Controlado das Setas */
+.btn-primary svg, .btn-secondary svg {
+    width: 22px; /* Diminuído de 32px para 22px para ficar proporcional e delicado */
+    height: auto;
+    flex-shrink: 0; /* Garante que a seta não vai amassar em telas menores */
+}
+
+.btn-login {
+    background: transparent;
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-signup {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-signup:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+/* organizee... */
+
+/* Container Principal do Card */
+.card-financeiro {
+    width: 100%;
+    max-width: 450px; /* Limita a largura para ficar parecido com o print */
+    padding: 24px;
+    
+    background-color: #FFFFFF;
+    border: 3px solid #4646463a; /* Borda azul exata do modelo */
+    border-radius: 24px;       /* Bordas bem arredondadas */
+    
+    font-family: 'Inter', sans-serif; /* Substitua pela fonte do seu projeto */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.068); /* Sombra leve opcional */
+}
+
+/* Alinhamento do Ícone ao lado do Título */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Espaço entre o ícone e o texto */
+    margin-bottom: 20px; /* Distância entre o título e a lista */
+}
+
+/* Tamanho do Ícone */
+.card-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+}
+
+/* Estilização do Título */
+.card-header h3 {
+    color: #000000;
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+/* Configuração da Lista Numérica */
+.card-list {
+    margin: 0;
+    padding-left: 20px; /* Cria o recuo padrão dos números */
+    list-style-type: decimal; /* Garante a numeração 1, 2, 3 automático */
+}
+
+/* Estilização de cada item da lista */
+.card-list li {
+    color: #333333;
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.6; /* Dá um espaçamento agradável entre as linhas */
+    margin-bottom: 4px;
+}
+
+
+/* ===== 1. HEADER & NAVBAR AJUSTADOS ===== */
+.header {
+    background: var(--bg-white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+/* Limpeza e ajuste da logo para ser flexível */
+.logo img {
+    width: 100%;
+    max-width: 180px;    /* Tamanho ideal no notebook */
+    height: auto;
+    object-fit: contain;
+    display: block;
+    transition: max-width 0.3s ease;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-family: 'Inria Serif', serif;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* ===== 2. HERO SECTION AJUSTADA ===== */
+.hero {
+    padding: 80px 0;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
+    overflow: hidden; /* Evita quebras de página para os lados */
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* Dá um pouco mais de destaque para o texto */
+    gap: 3rem;
+    align-items: center;
+}
+
+.hero-text h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem); /* Diminui o título de forma fluida em telas menores */
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+    line-height: 1.2;
+}
+
+.hero-text p {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    margin-bottom: 2rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+
+/* =======================================================
+   ===== REGRAS DE RESPONSIVIDADE (MEDIA QUERIES) =====
+   ======================================================= */
+
+/* --- TABLETS (Telas de até 992px) --- */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 0.8rem 0;
+    }
+
+    .logo img {
+        max-width: 140px; /* Logo ligeiramente menor em telas menores */
+    }
+
+    .nav-links {
+        gap: 1.2rem; /* Reduz o espaço dos links no menu */
+    }
+
+    .hero-content {
+        gap: 2rem;
+    }
+}
+
+.phone-mockup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.phone-screen {
+    width: 280px;
+    height: 580px;
+    background: linear-gradient(150deg, var(--primary-color), var(--accent-color));
+    border-radius: 50px;
+    padding: 1px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    position: relative;
+}
+
+.phone-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 25px;
+    
+    border-radius: 0 0 25px 25px;
+    z-index: 10;
+}
+
+.phone-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+
+/* ===== SEÇÃO DO SIMULADOR (VITINHO AO LADO DA LISTA SEMPRE) ===== */
+
+/* Alinha a lista e a imagem lado a lado em todas as telas */
+.simulador-conteudo-wrapper {
+    display: flex;
+    flex-direction: row;       /* Garante que fiquem SEMPRE lado a lado */
+    align-items: center;       /* Alinha verticalmente ao centro */
+    justify-content: space-between;
+    gap: 20px;                 /* Distância segura e inteligente */
+    margin: 20px 0;
+    width: 100%;               /* CORRETO: Sem estourar a tela */
+}
+
+/* Lista ocupa um espaço flexível e confortável */
+.lista-recursos {
+    flex: 1.3;                 /* Dá mais espaço para o texto respirar */
+    list-style: none;
+    padding: 0;
+}
+
+/* Imagem ocupa o restante do espaço lateral */
+.vitinho-preview {
+    flex: 0.7;                 /* Encolhe a imagem um pouco para priorizar a leitura */
+    display: flex;
+    justify-content: center;
+}
+
+.vitinho-img {
+    width: 100%;
+    max-width: 100%;           /* CORRETO: Impede vazamentos */
+    height: auto;              
+    max-height: 350px;         /* Mantém um tamanho fofo no celular */
+    object-fit: contain;
+}
+
+/* AJUSTES DE RESPONSIVIDADE PARA TELAS MENORES (Celulares) */
+@media (max-width: 768px) {
+    .simulador-conteudo-wrapper {
+        gap: 12px;             /* Diminui o espaço entre texto e imagem no celular */
+    }
+
+    .texto-recurso {
+        font-size: 0.85rem;    /* Fonte ligeiramente menor para caber em telas estreitas */
+    }
+
+    .check-box {
+        font-size: 0.9rem;     
+    }
+}
+
+/* ===== WHY CHOOSE SECTION ===== */
+.why-choose {
+    padding: 80px 0;
+    background: var(--bg-light);
+}
+
+.why-choose h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: var(--bg-white);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+
+
+
+/* Container de Alinhamento */
+.container-simulador {
+    max-width: 640px;           /* Largura de leitura ideal para conteúdo em uma coluna */
+    padding: 4rem 3rem;
+    font-family: var(--font-family);
+    text-align: left;
+    background-color: var(--bg-container);
+    border-radius: var(--radius-lg);
+}
+
+/* Cabeçalho do Bloco */
+.simulador-header {
+    margin-bottom: 2.5rem;
+}
+
+.simulador-header h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0 0 0.75rem 0;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+}
+
+.simulador-header .subtitulo {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+
+
+/* Lista de Recursos */
+.lista-recursos {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 3rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.12rem;               /* Espaçamento moderno usando gap em vez de margin-bottom */
+}
+
+.lista-recursos li {
+    display: flex;
+    align-items: center;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text-main);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Micro-interação elegante ao passar o mouse */
+.lista-recursos li:hover {
+    transform: translateX(6px);
+}
+
+/* O "Box" do ícone de Checkmark */
+.check-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+    font-weight: 900;
+    margin-right: 1.25rem;
+    color: var(--text-main);
+    background-color: rgba(115, 244, 215, 0.18); /* Ciano ultra suave */
+    border: 1px solid rgba(115, 244, 215, 0.4);   /* Borda fina para dar definição */
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+}
+
+/* Botão Ciano Dinâmico */
+.btn-explorar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+    color: var(--text-main);
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    
+    padding: 1.1rem 2.75rem;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    
+    /* Transições fluidas de alta performance */
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                filter 0.2s ease;
+    
+    /* Sombra multicamada orgânica */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 
+                0 10px 20px -5px rgba(115, 244, 215, 0.25);
+}
+
+/* Efeito de flutuação e brilho */
+.btn-explorar:hover {
+    transform: translateY(-4px);
+    filter: brightness(1.04);
+    box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.08), 
+                0 20px 30px -5px rgba(115, 244, 215, 0.45);
+}
+
+/* Efeito físico ao pressionar (Clique) */
+.btn-explorar:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 
+                0 10px 15px -3px rgba(115, 244, 215, 0.25);
+}
+/* ===== SOLUÇÕES SECTION ===== */
+
+
+
+/* ── SIMULATOR CONTAINER ── */
+.simulator-section {
+  /* Usa as variáveis que você criou. Se não existirem, aplica os fallbacks cinzas */
+  background: var(--off-white, #F9F9FE); 
+  padding: 100px 5%;
+  font-family: var(--font-family, 'Inter', sans-serif);
+  transition: background 0.3s ease; /* Suaviza a transição ao mudar de tema */
+}
+
+.simulator-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr; 
+  gap: 80px;
+  align-items: center;
+}
+
+/* Lado Esquerdo - Textos e Chamada */
+.simulator-info h3 {
+  color: var(--purple-main, #7B2FBE); /* Usa o roxo vivo das suas variáveis */
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.simulator-info h2 {
+  font-family: 'Sora', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--dark-text, #0B0F19); /* Muda automaticamente no Dark Mode para #F1F5F9 */
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
+  transition: color 0.3s ease;
+}
+
+.simulator-bullets {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* EFEITO DE MOVIMENTO: Os itens deslizam ao passar o mouse */
+.simulator-bullets li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--gray-700, #4A4A68); /* Muda automaticamente no Dark Mode para #94A3B8 */
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), color 0.3s ease;
+  cursor: pointer;
+}
+
+/* INTERAÇÃO: Desliza o texto para a direita e altera a cor para o roxo principal */
+.simulator-bullets li:hover {
+  transform: translateX(8px); 
+  color: var(--purple-main, #7B2FBE); 
+}
+
+/* Badge Roxo com Checkmark (✓) */
+.bullet-check {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border-radius: 50%;
+  /* Usa o degradê entre o roxo soft e o roxo main das suas variáveis */
+  background: linear-gradient(135deg, var(--purple-soft, #A364FF), var(--purple-main, #7B2FBE));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF; /* O checkmark (✓) deve se manter sempre branco para contraste */
+  font-size: 0.8rem;
+  font-weight: 800;
+  box-shadow: 0 4px 10px rgba(123, 47, 190, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* INTERAÇÃO: O ícone de check cresce e rotaciona ao passar o mouse */
+.simulator-bullets li:hover .bullet-check {
+  transform: scale(1.18) rotate(15deg); 
+  box-shadow: 0 6px 15px rgba(123, 47, 190, 0.4); 
+}
+
+/* ===== O CARD DO SIMULADOR (CORRIGIDO) ===== */
+.simulator-card {
+  background: var(--roxo-suave, #D0C2EE); /* Muda automaticamente no Dark Mode para #1E0A45 */
+  border-radius: var(--radius-lg, 24px);
+  padding: 44px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color, rgba(230, 230, 242, 0.5));
+  width: 100%;
+  box-sizing: border-box;
+  transition: background 0.3s ease, border-color 0.3s ease; /* Transição suave no Dark Mode */
+}
+
+/* Ajuste de responsividade do Card */
+@media (max-width: 768px) {
+  .simulator-card {
+    padding: 20px; /* Reduz o espaçamento para caber perfeitamente no celular */
+  }
+  .simulator-inner {
+    grid-template-columns: 1fr; /* Empilha as colunas em telas menores */
+    gap: 40px;
+  }
+}
+.simulator-card.reveal {
+  animation: reveal 0.6s ease-out;
+}
+
+.sim-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin-top: 0;
+  margin-bottom: 36px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sim-group {
+  margin-bottom: 28px;
+}
+
+.sim-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Valor em destaque ao lado da label */
+.sim-label span {
+  color: var(--purple-main);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+/* Customização dos Sliders (Range) */
+input[type=range] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 10px;
+  background: var(--gray-200);
+  cursor: pointer;
+  outline: none;
+}
+
+/* A bolinha (Thumb) do slider */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--purple-main);
+  border: 2px solid var(--white); /* Cria o efeito de anel do modelo */
+  box-shadow: 0 4px 12px rgba(123, 47, 190, 0.4);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+}
+
+/* Card Roxo Interno (Resultado Principal) */
+.sim-result {
+  background: var(--purple-dark);
+  border-radius: var(--radius-md);
+  padding: 32px 24px;
+  color: var(--white-off);
+  text-align: center;
+  margin-top: 36px;
+  box-shadow: 0 10px 25px rgba(58, 0, 161, 0.25);
+}
+
+.sim-result-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  opacity: 0.8;
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+  color: #FFFFFF; /* Cor do texto do label */
+}
+
+.sim-result-value {
+  font-family: 'Sora', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #E6E6F2; /* Cor do valor principal */
+}
+
+.sim-result-sub {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-top: 12px;
+  line-height: 1.4;
+  color: #E6E6F2; /* Cor do texto secundário */
+}
+
+/* Distribuição dos Valores de Baixo (Fora do bloco roxo) */
+.sim-breakdown {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 32px;
+  border-top: 1px solid var(--gray-200);
+  padding-top: 24px;
+}
+
+.sim-item {
+  text-align: center;
+}
+
+.sim-item-val {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--purple-main); /* Mudado para combinar com a base do print */
+}
+
+.sim-item-lbl {
+  font-size: 0.75rem;
+  color: var(--gray-700);
+  font-weight: 500;
+  margin-top: 6px;
+}
+
+/* ── ACCESSIBILITY SECTION ── */
+.access-section { 
+background: var(--bg-light); /* Antes estava var(--off-white) ou cor fixa */
+    padding: 80px 5%; 
+    text-align: center; /* Centraliza o cabeçalho */
+    font-family: 'Inter', sans-serif;
+    transition: background 0.3s ease;
+}
+
+/* Cabeçalho da Seção */
+.access-header-tag {
+    color: #7B2FBE;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+}
+
+.access-main-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.access-subtitle {
+    font-size: 0.95rem;
+    color: #8A8A99;
+    max-width: 600px;
+    margin: 0 auto 48px auto;
+    line-height: 1.5;
+}
+
+/* Grid de Cards */
+.access-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 24px; 
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: left; /* Garante que o conteúdo dentro dos cards seja alinhado à esquerda */
+}
+
+/* Cards */
+.access-card {
+    background: var(--bg-white);
+    border-radius: 16px; 
+    padding: 32px 28px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha os itens da coluna à esquerda */
+    justify-content: space-between; /* Garante espaçamento uniforme vertical */
+    transition: transform .25s, box-shadow .25s, background .3s, border .3s;
+}
+
+.access-card:hover { 
+    transform: translateY(-4px); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04); 
+}
+
+.access-icon { 
+    font-size: 2rem; 
+    margin-bottom: 20px; 
+}
+
+.access-title { 
+    font-family: 'Sora', sans-serif; 
+    font-size: 1.05rem; 
+    font-weight: 700; 
+    color: var(--text-dark); /* Garante que o título mude no modo escuro */
+    margin-bottom: 8px; 
+}
+
+.access-desc { 
+    font-size: 0.85rem; 
+    color: var(--text-light); /* Garante que a descrição mude no modo escuro */
+    line-height: 1.6;
+    flex-grow: 1; /* Faz o texto preencher o espaço para alinhar as badges embaixo */
+    margin-bottom: 16px;
+}
+
+/* Badges (Tags ovais roxas) */
+.access-badge {
+    display: inline-block; 
+    font-size: 0.725rem; 
+    font-weight: 700;
+    padding: 6px 14px; 
+    border-radius: 100px; /* Bordas perfeitamente arredondadas em pílula */
+    color: #7B2FBE;
+    background: rgba(123, 47, 190, 0.06); 
+    border: 1px solid rgba(123, 47, 190, 0.15);
+}
+
+
+.solucoes {
+    padding: 80px 0;
+}
+
+.solucoes h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.solucoes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.solucao-card {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.solucao-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.solucao-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.solucao-card p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ===== RECURSOS SECTION ===== */
+.recursos {
+    padding: 80px 0;
+    background: var(--bg-light);
+}
+
+.recursos h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.recursos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.recurso-card {
+    background: var(--bg-white);
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-color);
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.recurso-card:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.recurso-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.recurso-card p {
+    color: var(--text-light);
+}
+
+/* ===== CTA FINAL SECTION ===== */
+.cta-final {
+    padding: 80px 0;
+    background: var(--primary-gradient);
+    color: white;
+    text-align: center;
+
+}
+
+.cta-final h2 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.cta-final p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background-color: var(--bg-light); /* Ou var(--bg-light) se quiser ele na cor do fundo geral */
+    color: white;
+    padding: 60px 0 20px;
+    border-top: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.footer-section p {
+    color: var(--text-dark);
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: var(--secondary-color);
+}
+
+
+
+.footer a:hover {
+    color: var(--purple-main); /* Mantém o destaque roxo ao passar o mouse */
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    
+}
+
+.social-icon {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    color: var(--text-dark);
+}
+
+.social-icon:hover {
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ===== RESPONSIVIDADE AJUSTADA ===== */
+
+/* --- TABLETS E NOTEBOOKS MENORES (Até 992px) --- */
+@media (max-width: 992px) {
+    .nav-links {
+        gap: 1.2rem; /* Encolhe o espaço dos links para não quebrar a linha */
+    }
+    
+    .hero-content {
+        gap: 2rem;
+    }
+}
+
+/* --- CELULARES (Até 768px - Inclui iPhones) --- */
+@media (max-width: 768px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between; /* Mantém a logo na esquerda e os botões na direita */
+        align-items: center;
+        flex-wrap: nowrap; /* Impede que os botões caiam para a linha de baixo */
+        padding: 0.8rem 0;
+    }
+
+    /* Ocultamos os links centrais de texto no celular para liberar espaço */
+    .nav-links {
+        display: none;
+    }
+
+    .nav-buttons {
+        width: auto; /* Deixa os botões ocuparem apenas o espaço necessário */
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    /* Deixamos os botões de tamanho fixo ou menor para caberem lado a lado */
+    .btn-login, .btn-signup {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+        white-space: nowrap; /* Impede que o texto quebre em duas linhas */
+    }
+
+    /* Logo um pouco menor no celular para equilibrar o espaço */
+    .logo img {
+        max-width: 110px !important; 
+    }
+
+    /* --- HERO SECTION --- */
+    .hero-content {
+        grid-template-columns: 1fr; /* Muda para uma coluna só */
+        text-align: center;
+        padding: 40px 0;
+        gap: 2.5rem;
+    }
+
+    .hero-text h2 {
+        font-size: 2rem;
+    }
+
+    /* Alinha a imagem do mockup acima do texto ou abaixo dele de forma limpa */
+    .phone-mockup {
+        order: 1; /* Altere para -1 se quiser que o celular apareça antes do texto */
+        display: flex;
+        justify-content: center;
+    }
+
+    .phone-screen {
+        width: 240px;
+        height: auto; /* Deixe a altura automática para a imagem interna guiar o tamanho */
+        aspect-ratio: 9 / 19.5; /* Proporção moderna de tela de celular */
+    }
+
+    /* --- FEATURES GRID (Cards de Benefícios) --- */
+    .features-grid {
+        grid-template-columns: 1fr; /* Exibe os cards um abaixo do outro no celular */
+        gap: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .cta-final {
+        padding: 60px 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* --- CELULARES PEQUENOS (Até 480px) --- */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.5rem 0;
+    }
+
+    /* Ajuste fino dos botões para telas muito estreitas */
+    .btn-login, .btn-signup {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+
+    .logo img {
+        max-width: 95px !important;
+    }
+
+    .hero-text h2 {
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .btn-primary, .btn-primary-large {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        width: 100%; /* Botões de ação ocupam a largura total para toque fácil */
+    }
+
+    .feature-card, .solucao-card, .recurso-card {
+        padding: 1.25rem;
+    }
+
+    .phone-screen {
+        width: 200px;
+    }
+
+
+/* Responsividade para telas menores */
+@media (max-width: 992px) {
+    .access-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+    .access-grid { grid-template-columns: 1fr; }
+}
+
+
+}
