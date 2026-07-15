@@ -219,6 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Verifica se o usuário já tem uma preferência salva e aplica no carregamento
     const savedTheme = localStorage.getItem('theme');
 
+    // Se o tema salvo for escuro, aplica a classe e muda o emoji para o Sol
     if (savedTheme === 'dark') {
         if (body) body.classList.add('dark-theme');
         if (themeToggleBtn) themeToggleBtn.textContent = '☀️';

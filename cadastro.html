@@ -40,7 +40,7 @@
             <img src="img/image 10.png" alt="Mascote Elefante" class="mascot-img">
         </div>
 
-       <div class="cadastro-content">
+        <div class="cadastro-content">
             <div class="form-box">
                 <h2>Vamos começar?🚀</h2>
                 <p class="form-subtitle">Ei! Vamos bater essa meta juntos? cadastre-se e comece a sua jornada!</p>
@@ -63,23 +63,28 @@
                         </div>
                     </div>
 
-                    <div class="input-group">
-                        <label>Senha</label>
-                        <div class="input-wrapper">
-                            <span class="field-icon">🔑</span> 
-                            <input type="password" id="register-password" placeholder="DIGITE SUA SENHA" required>
-                            <button type="button" id="toggle-register-password" class="btn-toggle-password">👁️</button>
-                        </div>
-                    </div>
+                <div class="input-group">
+    <label>Senha</label>
+    <div class="input-wrapper">
+        <span class="field-icon">🔑</span> 
+        <input type="password" id="register-password" minlength="8" placeholder="DIGITE SUA SENHA" required>
+        <button type="button" id="toggle-register-password" class="btn-toggle-password">👁️</button>
+    </div>
+    <span id="register-password-length-error" class="error-message" style="display: none; color: #ef4444; font-size: 0.8rem; margin-top: 5px;">
+        A senha deve ter pelo menos 8 caracteres.
+    </span>
+</div>
 
-                    <div class="input-group">
+<div class="input-group">
     <label>Confirme a Senha</label>
     <div class="input-wrapper">
         <span class="field-icon">🔑</span> 
         <input type="password" id="confirm-password" placeholder="CONFIRME SUA SENHA" required>
         <button type="button" id="toggle-confirm-password" class="btn-toggle-password">👁️</button>
     </div>
-    <span id="password-error" class="error-message"></span>
+    <span id="register-password-match-error" class="error-message" style="display: none; color: #ef4444; font-size: 0.8rem; margin-top: 5px;">
+        As senhas não coincidem.
+    </span>
 </div>
 
                     <div class="forgot-link-box">

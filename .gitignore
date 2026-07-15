@@ -20,10 +20,6 @@ Thumbsd.db
 dist/
 build/
 
-# Project backups
-invictus-cash/
-invictus-cash_git_backup/
-
 # Logs
 *.log
 npm-debug.log*

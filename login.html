@@ -56,13 +56,16 @@
                     </div>
 
                     <div class="input-group">
-                        <label>Senha</label>
-                        <div class="input-wrapper">
-                            <span class="field-icon">🔑</span>
-                            <input type="password" id="password" placeholder="DIGITE SUA SENHA" required>
-                            <button type="button" id="toggle-password" class="btn-toggle-password">👁️</button>
-                        </div>
-                    </div>
+    <label>Senha</label>
+    <div class="input-wrapper">
+        <span class="field-icon">🔑</span>
+        <input type="password" id="password" minlength="8" placeholder="DIGITE SUA SENHA" required>
+        <button type="button" id="toggle-password" class="btn-toggle-password">👁️</button>
+    </div>
+    <span id="password-error" class="error-message-text" style="display: none; color: #ef4444; font-size: 0.8rem; margin-top: 5px;">
+        A senha deve ter pelo menos 8 caracteres.
+    </span>
+</div>
 
                     <div class="forgot-link-box">
                         <a href="#" class="forgot-link">Esqueceu a senha?</a>

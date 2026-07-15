@@ -35,13 +35,9 @@
     overflow: hidden;
 }
 
-
-
 .sidebar-logo img {
-    height: 500px;
+    height: 150px;
     object-fit: contain;
-    max-width: 200%;
-    max-height: 200%;
 }
 
 .sidebar-title {
