@@ -269,3 +269,59 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            // Abre e fecha apenas a lista de links de texto
+            navLinks.classList.toggle('active');
+        });
+
+        // Fecha o menu se o usuário clicar em qualquer link de texto
+        const links = navLinks.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('.header');
+    let ultimoScroll = 0;
+    const tolerancia = 5; // Pixels mínimos de movimento para ativar a ação
+
+    window.addEventListener('scroll', () => {
+        const scrollAtual = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Evita que o cálculo quebre se a rolagem passar dos limites (efeito elástico no mobile)
+        if (scrollAtual < 0) return;
+
+        // Se o movimento de rolagem for menor que a tolerância, não faz nada
+        if (Math.abs(scrollAtual - ultimoScroll) < tolerancia) {
+            return;
+        }
+
+        // Se estiver bem no topo da página, sempre mostra o header
+        if (scrollAtual <= 50) {
+            header.classList.remove('header-hidden');
+            return;
+        }
+
+        // Se rolou para baixo, esconde o header
+        if (scrollAtual > ultimoScroll && scrollAtual > 100) {
+            header.classList.add('header-hidden');
+        } 
+        // Se rolou para cima, exibe o header imediatamente
+        else if (scrollAtual < ultimoScroll) {
+            header.classList.remove('header-hidden');
+        }
+
+        // Atualiza o ponto do último scroll
+        ultimoScroll = scrollAtual;
+    });
+});

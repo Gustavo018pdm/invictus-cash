@@ -113,21 +113,22 @@
 
 
 
-/* ===== RESET E ESTILOS GLOBAIS ===== */
+/* ===== RESET E ESTILOS GLOBAIS CORRIGIDOS ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Isso vai criar uma borda vermelha ao redor de ABSOLUTAMENTE TUDO no seu site */
-    
+}
 
-   
+*, *::before, *::after {
+    box-sizing: border-box; 
 }
 
 html {
     min-height: 100%;
     font-family: 'Inter', sans-serif;
     scroll-behavior: smooth;
+    /* Removemos o overflow do html para o sticky funcionar livremente */
 }
 
 body {
@@ -135,13 +136,15 @@ body {
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--bg-white);
-    body {
     transition: background-color 0.6s ease, color 0.6s ease;
-    body {
-    padding-top: 80px; /* Ajuste essa altura para bater com a altura real da sua navbar */
-}
-}
     
+    /* Se você estiver usando position: fixed, mantenha este padding. 
+       Se estiver usando position: sticky, você pode apagar esta linha de padding abaixo! */
+    padding-top: 0px; 
+    
+    width: 100%;
+    /* Mantemos o overflow apenas no body e apenas na horizontal (X), o que não quebra o sticky */
+    overflow-x: hidden; 
 }
 
 html, body {
@@ -382,15 +385,26 @@ a {
 }
 
 
-/* ===== 1. HEADER & NAVBAR AJUSTADOS ===== */
+
+/* === BOTÃO HAMBÚRGUER (Escondido por padrão no computador) === */
+/* ===== HEADER & NAVBAR ===== */
+/* Seu header base precisa ter uma transição suave */
 .header {
     background: var(--bg-white);
     box-shadow: var(--shadow);
-    position:fixed; /* Alterado de unset para fixed */
-    top: 0;
-    left: 0;         /* Garante o alinhamento correto à esquerda */
-    z-index: 1;   /* Aumentado para garantir que fique por cima de tudo na rolagem */
+    position: sticky; 
+    top: 0;           
+    left: 0;
     width: 100%;
+    z-index: 1000;
+    /* Usar transform para transição evita bugs de renderização no sticky */
+    transition: transform 0.3s ease-in-out, background 0.3s ease; 
+    transform: translateY(0); /* Estado visível padrão */
+}
+
+/* Esconde o menu jogando-o para cima suavemente */
+.header.header-hidden {
+    transform: translateY(-100%); 
 }
 
 .navbar {
@@ -398,19 +412,19 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
-    position:relative; /* Mantém a navbar fixa no topo */
+    position: relative;
     z-index: 10;
 }
-/* Limpeza e ajuste da logo para ser flexível */
+
 .logo img {
     width: 100%;
-    max-width: 180px;    /* Tamanho ideal no notebook */
+    max-width: 180px;
     height: auto;
     object-fit: contain;
     display: block;
-    transition: max-width 0.3s ease;
 }
 
+/* Links de Navegação (Desktop) */
 .nav-links {
     display: flex;
     gap: 2rem;
@@ -429,12 +443,86 @@ a {
     color: var(--primary-color);
 }
 
+/* Container de Botões */
+.nav-buttons-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 .nav-buttons {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
+/* === BOTÃO HAMBÚRGUER (Escondido no PC) === */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.hamburger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--text-dark, #333);
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background: var(--text-dark, #333);
+    transition: all 0.3s ease;
+}
+
+.hamburger::before { top: -8px; }
+.hamburger::after { bottom: -8px; }
+
+
+/* ===== RESPONSIVIDADE (Celular e Tablet) ===== */
+@media (max-width: 768px) {
+    /* Ativa o botão hambúrguer ao lado dos botões comuns */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Reduz um pouco o tamanho dos botões de login/cadastro para caber tudo na barra do celular */
+    .nav-buttons button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    /* Apenas a lista de links vira o menu suspenso abaixo do header */
+    .nav-links {
+        position: absolute;
+        top: 100%; /* Aparece logo abaixo da barra */
+        left: 0;
+        width: 100%;
+        background: var(--bg-white);
+        box-shadow: var(--shadow);
+        display: none; /* Escondido por padrão */
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem 0;
+        gap: 1.5rem;
+        z-index: 999;
+    }
+
+    /* JavaScript ativa essa classe para mostrar apenas os links */
+    .nav-links.active {
+        display: flex;
+    }
+}
 /* ===== 2. HERO SECTION AJUSTADA ===== */
 .hero {
     padding: 80px 0;

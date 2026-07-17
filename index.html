@@ -8,31 +8,35 @@
 </head>
 <body>
     <!-- HEADER/NAVEGAÇÃO -->
-    <header class="header">
-        <div class="container">
-            <div class="navbar">
-                <div class="logo">
-                    <img id="site-logo" src="img/Frame 21 copia.PNG" alt="Invictus Cash Logo">
-                    
-                </div>
-                <nav class="nav-links">
-                    <a href="#home">INICIO</a>
-                    <a href="#features">DIVERSIDADE</a>
-                    <a href="#beneficios">SIMULADOR</a>
-                    <a href="#recursos">ACESSIBILIDADE</a>
-                    <a href="#contato">SOBRE</a>
-                </nav>
+<header class="header">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img id="site-logo" src="img/Frame 21 copia.PNG" alt="Invictus Cash Logo">
+            </div>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="#home">INICIO</a>
+                <a href="#features">DIVERSIDADE</a>
+                <a href="#beneficios">SIMULADOR</a>
+                <a href="#recursos">ACESSIBILIDADE</a>
+                <a href="#contato">SOBRE</a>
+            </nav>
+
+            <div class="nav-buttons-container">
                 <div class="nav-buttons">
-
                     <button id="theme-toggle" class="btn-theme" aria-label="Alternar tema">🌙</button>
-
-                    
-                    <button class="btn-login"> <a  href="login.html">Login</button></a>
-                    <button class="btn-signup"> <a href="cadastro.html">Cadastro</button></a>
+                    <a href="login.html" class="btn-link"><button class="btn-login">Login</button></a>
+                    <a href="cadastro.html" class="btn-link"><button class="btn-signup">Cadastro</button></a>
                 </div>
+
+                <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+                    <span class="hamburger"></span>
+                </button>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
     <!-- HERO SECTION -->
     <section class="hero" id="home">
