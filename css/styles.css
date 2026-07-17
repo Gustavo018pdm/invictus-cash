@@ -128,7 +128,7 @@ html {
     min-height: 100%;
     font-family: 'Inter', sans-serif;
     scroll-behavior: smooth;
-    /* Removemos o overflow do html para o sticky funcionar livremente */
+    /* SEM NENHUM OVERFLOW AQUI PARA NÃO QUEBRAR O STICKY */
 }
 
 body {
@@ -138,27 +138,12 @@ body {
     background-color: var(--bg-white);
     transition: background-color 0.6s ease, color 0.6s ease;
     
-    /* Se você estiver usando position: fixed, mantenha este padding. 
-       Se estiver usando position: sticky, você pode apagar esta linha de padding abaixo! */
-    padding-top: 0px; 
+    padding-top: 0px; /* Como estamos usando sticky, fica 0px mesmo */
     
     width: 100%;
-    /* Mantemos o overflow apenas no body e apenas na horizontal (X), o que não quebra o sticky */
+    /* Mantemos o overflow SOMENTE no body para evitar barras de rolagem laterais */
     overflow-x: hidden; 
 }
-
-html, body {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Corta qualquer conteúdo que tente vazar para as laterais */
-}
-
-/* Garante que imagens e elementos flexíveis respeitem a largura máxima da tela */
-*, *::before, *::after {
-    box-sizing: border-box; /* Faz com que padding e bordas não aumentem a largura do elemento */
-}
-
 
 
 
