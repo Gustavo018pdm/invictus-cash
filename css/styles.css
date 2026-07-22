@@ -1161,7 +1161,7 @@ background: var(--bg-light); /* Antes estava var(--off-white) ou cor fixa */
 
 .team-member img { 
     width: 100%; 
-    border-radius: 12px; 
+    border-radius: 150px; 
     margin-bottom: 20px; 
 }
 
