@@ -655,8 +655,8 @@ a {
 }
 
 .vitinho-img {
-    width: 100%;               
-    max-width: 380px !important; /* Força o Vitinho a crescer na tela */
+    width: 120%;               
+    max-width: 650px !important; /* Força o Vitinho a crescer na tela */
     height: auto;              
     object-fit: contain;
 }
@@ -1108,6 +1108,61 @@ background: var(--bg-light); /* Antes estava var(--off-white) ou cor fixa */
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin-bottom: 12px;
+}
+
+.team-section {
+    padding: 80px 0;
+    background: var(--bg-light);
+}
+
+.team-section h2 {
+    font-family: 'Sora', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.team-section p {
+    font-size: 0.95rem;
+    color: #8A8A99;
+    max-width: 600px;
+    margin: 0 auto 48px auto;
+    line-height: 1.5;
+}
+
+.team-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 24px; 
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: left; /* o conteúdo dentro dos cards estara alinhado à esquerda */
+}
+
+.team-member {
+    background: var(--bg-white);
+    border-radius: 150px; 
+    padding: 32px 28px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha os itens da coluna à esquerda */
+    justify-content: space-between; /* Garante espaçamento uniforme vertical */
+    transition: transform .25s, box-shadow .25s, background .3s, border .3s;
+}
+
+.team-member:hover { 
+    transform: translateY(-4px); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04); 
+
+}
+
+.team-member img { 
+    width: 100%; 
+    border-radius: 12px; 
+    margin-bottom: 20px; 
 }
 
 .access-main-title {
